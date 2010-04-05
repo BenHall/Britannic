@@ -2,5 +2,6 @@
 {
     public class ArtistResource
     {
+        public string Name { get; set; }
     }
 }
