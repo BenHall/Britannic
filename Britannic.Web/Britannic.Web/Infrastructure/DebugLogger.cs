@@ -14,22 +14,22 @@ namespace Britannic.Web.Infrastructure
 
         public void WriteDebug(string message, params object[] format)
         {
-            Debug.WriteLine(message, format);
+            Debug.WriteLine(string.Format(message, format));
         }
 
         public void WriteWarning(string message, params object[] format)
         {
-            Debug.WriteLine(message, format);
+            Debug.WriteLine(string.Format(message, format));
         }
 
         public void WriteError(string message, params object[] format)
         {
-            Debug.WriteLine(message, format);
+            Debug.WriteLine(string.Format(message, format));
         }
 
         public void WriteInfo(string message, params object[] format)
         {
-            Debug.WriteLine(message, format);
+            Debug.WriteLine(string.Format(message, format));
         }
 
         public void WriteException(Exception e)

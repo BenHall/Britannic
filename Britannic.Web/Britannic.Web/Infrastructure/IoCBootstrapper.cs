@@ -1,6 +1,8 @@
 using Britannic.Web.Repositories;
+using Castle.Facilities.FactorySupport;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Divan;
 using OpenRasta.DI;
 using OpenRasta.DI.Windsor;
 
@@ -22,10 +24,14 @@ namespace Britannic.Web.Infrastructure
         IWindsorContainer ConfigureContainer()
         {
             _container = new WindsorContainer();
+            var facility = new FactorySupportFacility();
+            _container.Kernel.AddFacility("factory.support", facility);
 
             _container.Register(
                 Component.For<IArtistRepository>()
                     .ImplementedBy<ArtistRepository>());
+
+            _container.Register(Component.For<ICouchDatabase>().LifeStyle.Transient.UsingFactoryMethod(CouchDb.BuildCouchDb));
 
             return _container;
         }

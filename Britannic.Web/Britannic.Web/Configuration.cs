@@ -18,7 +18,7 @@ namespace Britannic.Web
         {
             using (OpenRastaConfiguration.Manual)
             {
-                ResourceSpace.Uses.CustomDependency<ILogger, DebugLogger>(DependencyLifetime.Singleton);
+                //ResourceSpace.Uses.CustomDependency<ILogger, DebugLogger>(DependencyLifetime.PerRequest);
 
                 ResourceSpace.Has.ResourcesOfType<HomeResource>()
                     .AtUri("/home")
