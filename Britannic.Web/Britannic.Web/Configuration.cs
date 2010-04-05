@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using OpenRasta.Codecs;
-using OpenRasta.Codecs.WebForms;
+using Britannic.Web.Handlers.Artists;
+using Britannic.Web.Handlers.Releases;
+using Britannic.Web.Resources.Artists;
+using Britannic.Web.Resources.Releases;
 using OpenRasta.Configuration;
-using OpenRasta.DI;
-using OpenRasta.Web;
-using OpenRasta.Web.Codecs;
-using OpenRasta.Web.UriDecorators;
 using Britannic.Web.Handlers;
 using Britannic.Web.Resources;
 
@@ -21,11 +17,28 @@ namespace Britannic.Web
                 ResourceSpace.Has.ResourcesOfType<HomeResource>()
                     .AtUri("/home")
                     .And.AtUri("/")
-                    .And.AtUri("/artists/{name}")
                     .HandledBy<HomeHandler>()
-                    .RenderedByAspx("~/Views/HomeView.aspx");
+                    .RenderedByAspx("~/Views/HomeView.aspx")
+                    .And.AsJsonDataContract();
+
+                ResourceSpace.Has.ResourcesOfType<ArtistListResource>()
+                    .AtUri("/artists")
+                    .HandledBy<ArtistListHandler>()
+                    .RenderedByAspx("~/Views/Artists/List.aspx")
+                    .And.AsJsonDataContract();
+
+                ResourceSpace.Has.ResourcesOfType<ArtistResource>()
+                    .AtUri("/artists/{name}")
+                    .HandledBy<ArtistHandler>()
+                    .RenderedByAspx("~/Views/Artists/Show.aspx")
+                    .And.AsJsonDataContract();
+
+                ResourceSpace.Has.ResourcesOfType<ReleaseResource>()
+                    .AtUri("/artists/{name}/{release}")
+                    .HandledBy<ReleaseHandler>()
+                    .RenderedByAspx("~/Views/Releases/Show.aspx")
+                    .And.AsJsonDataContract();
             }
         }
     }
-
 }
