@@ -1,5 +1,6 @@
 using Britannic.Web.Handlers.Artists;
 using Britannic.Web.Handlers.Releases;
+using Britannic.Web.Infrastructure;
 using Britannic.Web.Resources.Artists;
 using Britannic.Web.Resources.Releases;
 using OpenRasta.Configuration;
@@ -17,6 +18,7 @@ namespace Britannic.Web
             {
                 //ResourceSpace.Uses.CustomDependency<ILogger, DebugLogger>(DependencyLifetime.PerRequest);
 
+                ResourceSpace.Uses.UriDecorator<FormatParameterUriDecorator>();
                 ResourceSpace.Uses.UriDecorator<ContentTypeExtensionUriDecorator>();
 
                 ResourceSpace.Has.ResourcesOfType<HomeResource>()

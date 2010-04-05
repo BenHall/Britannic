@@ -1,4 +1,6 @@
-﻿using Britannic.Web.Repositories;
+﻿using System.Collections.Generic;
+using Britannic.Web.Models;
+using Britannic.Web.Repositories;
 using Britannic.Web.Resources.Artists;
 
 namespace Britannic.Web.Handlers.Artists
@@ -14,7 +16,9 @@ namespace Britannic.Web.Handlers.Artists
 
         public object Get()
         {
-            return new ArtistListResource();
+            var artistListResource = new ArtistListResource();
+            artistListResource.Artists = new List<Artist> { new Artist { Name = "Bob" }, new Artist { Name = "Bill" } };
+            return artistListResource;
         }
     }
 }
