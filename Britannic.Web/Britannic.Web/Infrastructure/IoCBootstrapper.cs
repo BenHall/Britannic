@@ -2,9 +2,9 @@ using Britannic.Web.Repositories;
 using Castle.Facilities.FactorySupport;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using Divan;
 using OpenRasta.DI;
 using OpenRasta.DI.Windsor;
+using Loft;
 
 namespace Britannic.Web.Infrastructure
 {
@@ -31,7 +31,7 @@ namespace Britannic.Web.Infrastructure
                 Component.For<IArtistRepository>()
                     .ImplementedBy<ArtistRepository>());
 
-            _container.Register(Component.For<ICouchDatabase>().LifeStyle.Transient.UsingFactoryMethod(CouchDb.BuildCouchDb));
+            _container.Register(Component.For<IDatabase>().LifeStyle.Transient.UsingFactoryMethod(CouchDb.BuildCouchDb));
 
             return _container;
         }

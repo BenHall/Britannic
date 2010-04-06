@@ -1,12 +1,12 @@
-﻿using Divan;
+﻿using Loft;
 
 namespace Britannic.Web.Infrastructure
 {
     public static class CouchDb
     {
-        public static ICouchDatabase BuildCouchDb()
+        public static Database BuildCouchDb()
         {
-            return new CouchDatabase(new CouchServer("192.168.1.66", 5984));
+            return new Database(new Server("192.168.1.66", 5984), "product_catalog");
         }
     }
 }

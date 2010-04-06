@@ -1,12 +1,12 @@
 ﻿using Britannic.Web.Infrastructure;
-using Divan;
 using Machine.Specifications;
+using Loft;
 
 namespace Britannic.Web.Specs
 {
     public class CouchDbSpecs
     {
-        protected static ICouchDatabase Database;
+        protected static IDatabase Database;
     }
 
     [Subject("Creating CouchDB object")]

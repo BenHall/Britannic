@@ -60,8 +60,8 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\lib\windsor\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Divan">
-      <HintPath>..\..\lib\divan\Divan.dll</HintPath>
+    <Reference Include="Loft">
+      <HintPath>..\..\lib\loft\Loft.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\lib\windsor\log4net.dll</HintPath>
