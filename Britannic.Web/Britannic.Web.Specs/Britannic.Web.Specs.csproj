@@ -47,8 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistRepositorySpecs.cs" />
-    <Compile Include="CouchDbSpecs.cs" />
+    <Compile Include="Repositories\ArtistRepositorySpecs.cs" />
+    <Compile Include="Infrastructure\CouchDbSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

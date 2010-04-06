@@ -6,7 +6,7 @@ using Machine.Specifications;
 using Loft;
 using Britannic.Web.Infrastructure;
 
-namespace Britannic.Web.Specs
+namespace Britannic.Web.Specs.Repositories
 {
     public class ArtistRepositorySpecs
     {

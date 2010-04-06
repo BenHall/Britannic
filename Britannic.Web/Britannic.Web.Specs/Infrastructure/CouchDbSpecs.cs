@@ -2,7 +2,7 @@
 using Machine.Specifications;
 using Loft;
 
-namespace Britannic.Web.Specs
+namespace Britannic.Web.Specs.Infrastructure
 {
     public class CouchDbSpecs
     {
